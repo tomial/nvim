@@ -14,11 +14,15 @@ return {
 			"hrsh7th/cmp-buffer",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-cmdline",
+			"roobert/tailwindcss-colorizer-cmp.nvim",
 		},
 		config = function()
 			local cmp = require("cmp")
 
 			cmp.setup({
+				formatting = {
+					format = require("tailwindcss-colorizer-cmp").formatter,
+				},
 				snippet = {
 					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)
@@ -36,6 +40,7 @@ return {
 					end,
 				},
 				window = {
+					col_offset = -3,
 					completion = cmp.config.window.bordered(),
 					documentation = cmp.config.window.bordered(),
 				},

@@ -25,3 +25,16 @@ vim.keymap.set("n", "<leader>fsym", ":FzfLua lsp_live_workspace_symbols<CR>", { 
 vim.keymap.set("n", "<leader>fdef", ":FzfLua lsp_definitions<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fimp", ":FzfLua lsp_implementations<CR>", { silent = true })
 vim.keymap.set("n", "<leader>fref", ":FzfLua lsp_references<CR>", { silent = true })
+
+-- create format command
+vim.api.nvim_create_user_command("Format", function(args)
+	local range = nil
+	if args.count ~= -1 then
+		local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+		range = {
+			start = { args.line1, 0 },
+			["end"] = { args.line2, end_line:len() },
+		}
+	end
+	require("conform").format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })
