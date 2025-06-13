@@ -35,4 +35,16 @@ return {
 			require("leap").set_default_mappings()
 		end,
 	},
+	{
+		"kosayoda/nvim-lightbulb",
+		opts = {
+			sign = {
+				enabled = false,
+			},
+			float = {
+				enabled = true,
+			},
+			autocmd = { enabled = true },
+		},
+	},
 }
