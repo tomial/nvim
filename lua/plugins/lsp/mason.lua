@@ -18,7 +18,6 @@ return {
 				"lua_ls",
 				"rust_analyzer",
 				"gopls",
-				"prettier",
 				"vue_ls",
 				"ts_ls",
 				"html",

@@ -15,16 +15,14 @@ vim.opt.clipboard:append({ "unnamed", "unnamedplus" })
 -- vim.opt.clipboard = ""
 
 vim.opt.fileformats = { "unix", "dos" }
-
 vim.g.mapleader = " "
-
 -- laggggggggggg
 -- vim.g.clipboard = {
 -- 	name = "WslClipboard",
--- 	copy = {
--- 		["+"] = "win32yank -i --crlf",
--- 		["*"] = "win32yank -i --crlf",
--- 	},
+-- copy = {
+-- 	["+"] = "win32yank -i --crlf",
+-- 	["*"] = "win32yank -i --crlf",
+-- },
 -- 	paste = {
 -- 		["+"] = "win32yank -o --lf",
 -- 		["*"] = "win32yank -o --lf",

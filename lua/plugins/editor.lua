@@ -53,4 +53,7 @@ return {
 			color_square_width = 2,
 		},
 	},
+	{
+		"tpope/vim-fugitive",
+	},
 }
